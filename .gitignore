@@ -1,0 +1,39 @@
+# Общие файлы
+.DS_Store
+*.log
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Фронтенд (Vue.js + TypeScript)
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+frontend/coverage/
+frontend/tsconfig.tsbuildinfo
+frontend/*.log
+frontend/yarn-error.log
+frontend/npm-debug.log
+
+# Бэкенд (Laravel)
+backend/node_modules/  # Если используете npm в Laravel
+backend/vendor/
+backend/.env
+backend/storage/logs/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+backend/storage/framework/cache/*
+backend/storage/debugbar/*
+backend/bootstrap/cache/*
+backend/composer.lock  # Опционально, если не хотите коммитить
+backend/.phpunit.result.cache
+backend/.php_cs.cache
+backend/storage/exports/*
+backend/public/storage  # Если используете символические ссылки
+backend/public/hot
+backend/public/mix-manifest.json  # Если используете Laravel Mix
+
+# Тестовые файлы
+coverage/
