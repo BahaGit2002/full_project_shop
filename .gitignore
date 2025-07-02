@@ -16,6 +16,7 @@ frontend/tsconfig.tsbuildinfo
 frontend/*.log
 frontend/yarn-error.log
 frontend/npm-debug.log
+frontend/.idea/
 
 # Бэкенд (Laravel)
 backend/node_modules/  # Если используете npm в Laravel
@@ -34,6 +35,7 @@ backend/storage/exports/*
 backend/public/storage  # Если используете символические ссылки
 backend/public/hot
 backend/public/mix-manifest.json  # Если используете Laravel Mix
+backend/.idea/
 
 # Тестовые файлы
 coverage/
