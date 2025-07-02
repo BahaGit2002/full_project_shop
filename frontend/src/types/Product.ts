@@ -17,6 +17,6 @@ export interface ProductDetail extends Product {
     country: string;
     packaging: string;
     category: Category;
-    price: Price;
+    price_obj: Price;
 }
 
