@@ -5,7 +5,6 @@
       viewBox="0 0 25 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      @click="toggleFill"
       class="heart-icon"
   >
     <path
@@ -48,7 +47,7 @@ const filledPath = `
 `;
 
 const currentPath = computed(() => props.isFilled ? filledPath : defaultPath);
-const fillColor = computed(() => props.isFilled ? props.activeColor ?? '#FF0000' : props.defaultColor ?? '#414141');
+const fillColor = computed(() => props.isFilled ? '#FF0000' : '#414141');
 
 </script>
 

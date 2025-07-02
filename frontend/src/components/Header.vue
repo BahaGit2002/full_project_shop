@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import {ref} from 'vue';
+import {useRoute} from 'vue-router';
 import GroupIcon from "./icons/GroupIcon.vue";
 import MenuIcon from './icons/MuneIcon.vue'
 import SearchIcon from './icons/SearchIcon.vue'
@@ -14,6 +15,7 @@ const getCookie = (name: string): string | null => {
   if (parts.length === 2) return parts.pop()?.split(';').shift() || null;
   return null;
 };
+const route = useRoute()
 
 const isAuthenticated = ref(!!getCookie('auth_token'));
 </script>
@@ -47,8 +49,15 @@ const isAuthenticated = ref(!!getCookie('auth_token'));
     <!-- Иконки и профиль -->
     <div class="flex items-center space-x-8">
       <!-- Избранное -->
-      <router-link to="/favorite" class="flex flex-col items-center text-gray-600 text-sm hover:text-teal-500">
-        <FavoriteIcon/>
+      <router-link
+          to="/favorite"
+          class="flex flex-col items-center text-sm"
+          :class="{
+            'text-red-500': route.path === '/favorite',
+            'text-gray-600 hover:text-teal-500': route.path !== '/favorite'
+          }"
+      >
+        <FavoriteIcon :is-filled="route.path === '/favorite'"/>
         Избранное
       </router-link>
       <!-- Заказы -->
@@ -59,7 +68,7 @@ const isAuthenticated = ref(!!getCookie('auth_token'));
 
       <!-- Корзина -->
       <button class="flex flex-col items-center text-gray-600 text-sm hover:text-teal-500">
-        <CartIcon size="md" />
+        <CartIcon size="md"/>
         Корзина
       </button>
 
@@ -71,7 +80,7 @@ const isAuthenticated = ref(!!getCookie('auth_token'));
       </div>
       <router-link to="/sign-in" v-else class="flex flex-col items-center text-gray-600 text-sm hover:text-teal-500">
         <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
-       Sign In
+        Sign In
       </router-link>
 
     </div>

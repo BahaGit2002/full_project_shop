@@ -117,7 +117,7 @@ const updateFavoriteStatus = (productId: string, isFavorited: boolean) => {
             @update:is_favorited="updateFavoriteStatus(product.id, $event)"
         >
           <template #frame-icon>
-            <FrameIcon :is-filled="product.is_favorited"/>
+            <FrameIcon :is-filled="!!product.is_favorited"/>
           </template>
         </ProductCard>
       </div>
@@ -145,7 +145,7 @@ const updateFavoriteStatus = (productId: string, isFavorited: boolean) => {
           @update:is_favorited="updateFavoriteStatus(product.id, $event)"
       >
         <template #frame-icon>
-          <FrameIcon :is-filled="product.is_favorited"/>
+          <FrameIcon :is-filled="!!product.is_favorited"/>
         </template>
       </ProductCard>
     </div>
@@ -173,7 +173,7 @@ const updateFavoriteStatus = (productId: string, isFavorited: boolean) => {
             @update:is_favorited="updateFavoriteStatus(product.id, $event)"
         >
           <template #frame-icon>
-            <FrameIcon :is-filled="product.is_favorited"/>
+            <FrameIcon :is-filled="!!product.is_favorited"/>
           </template>
         </ProductCard>
       </div>

@@ -50,7 +50,7 @@ const deleteFavorite = (productId: string) => {
           @click="deleteFavorite(product.id)"
       >
         <template #frame-icon>
-          <FrameIcon :is-filled="product.is_favorited"/>
+          <FrameIcon :is-filled="!!product.is_favorited"/>
         </template>
       </ProductCard>
     </div>
